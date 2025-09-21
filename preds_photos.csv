@@ -1,0 +1,9 @@
+﻿file,pred_top1,conf_top1,top1_class,top1_prob,top2_class,top2_prob,top3_class,top3_prob
+C:\Users\LENOVO\Desktop\deeplearning_project\photos\144.jpg,buildings,0.9518557786941528,buildings,0.9518557786941528,sea,0.03581526502966881,street,0.006425577215850353
+C:\Users\LENOVO\Desktop\deeplearning_project\photos\183.jpg,forest,0.999997615814209,forest,0.999997615814209,glacier,1.0073475777971908e-06,mountain,5.166475034457108e-07
+C:\Users\LENOVO\Desktop\deeplearning_project\photos\199.jpg,forest,0.9992673993110657,forest,0.9992673993110657,mountain,0.0002996656985487789,buildings,0.00025662340340204537
+C:\Users\LENOVO\Desktop\deeplearning_project\photos\203.jpg,buildings,0.9989954829216003,buildings,0.9989954829216003,street,0.0007066159159876406,glacier,0.00016729354683775455
+C:\Users\LENOVO\Desktop\deeplearning_project\photos\211.jpg,sea,0.9997531771659851,sea,0.9997531771659851,glacier,0.0001383036869810894,street,8.031787001527846e-05
+C:\Users\LENOVO\Desktop\deeplearning_project\photos\227.jpg,sea,0.9014161229133606,sea,0.9014161229133606,mountain,0.04980186000466347,forest,0.027467697858810425
+C:\Users\LENOVO\Desktop\deeplearning_project\photos\3.jpg,street,0.9999381303787231,street,0.9999381303787231,buildings,6.0889120504725724e-05,forest,5.26315034221625e-07
+C:\Users\LENOVO\Desktop\deeplearning_project\photos\5.jpg,buildings,0.9989157915115356,buildings,0.9989157915115356,sea,0.0007356820860877633,street,0.0003224422689527273
