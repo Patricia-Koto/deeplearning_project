@@ -25,6 +25,50 @@ Lien : [Intel Image Classification – Kaggle](https://www.kaggle.com/datasets/p
 
 ---
 
+## 🔎 Méthodologie  
+
+1. **Préparation des données**  
+   - Chargement et exploration du dataset.  
+   - Normalisation des pixels (0–1).  
+   - Découpage en train/validation/test.  
+   - **Data augmentation** : rotation, retournement horizontal, zoom, luminosité.  
+
+2. **Modélisation**  
+   - Implémentation d’un **CNN baseline** (convolutions + pooling + dropout).  
+   - Entraînement et évaluation sur validation set.  
+   - Limite : overfitting observé.  
+
+3. **Transfer Learning**  
+   - Utilisation de **MobileNetV2 pré-entraîné sur ImageNet**.  
+   - Gel des couches convolutionnelles → ajout d’une nouvelle couche Dense pour la classification en 6 classes.  
+   - Fine-tuning sur certaines couches profondes.  
+
+4. **Entraînement**  
+   - Optimiseur : **Adam**.  
+   - Fonction de coût : **Categorical Crossentropy**.  
+   - Callbacks : EarlyStopping et ModelCheckpoint (`transfer_best.keras`).  
+
+5. **Évaluation**  
+   - **Accuracy** train/val/test tracée à chaque epoch.  
+   - Calcul de la **matrice de confusion** et des métriques (précision, rappel, F1-score).  
+   - Analyse des erreurs fréquentes : confusion glacier ↔ mountain, forest ↔ street.  
+
+---
+
+## 📈 Résultats  
+
+- **CNN baseline** : accuracy limitée (~65%), surapprentissage rapide.  
+- **Transfer Learning (MobileNetV2)** :  
+  - Accuracy de validation : **~85–90%**.  
+  - Meilleures performances sur `sea` et `forest`.  
+  - Difficultés persistantes pour `glacier` et `mountain` (textures proches).  
+- **Matrice de confusion** : montre de bonnes séparations globales, mais quelques confusions inter-classes.  
+- **F1-score global** : satisfaisant (>0.85), confirmant la robustesse du modèle.  
+
+👉 Conclusion : le **transfer learning améliore fortement la performance** par rapport à un CNN simple.  
+
+---
+
 ## ⚙️ Installation  
 
 ### 1. Cloner le projet  
@@ -76,12 +120,6 @@ Une interface s’ouvre dans le navigateur (par défaut : [http://localhost:8501
 
 ---
 
-## 📈 Résultats  
-- Accuracy d’entraînement/validation suivie par courbes `loss` et `accuracy`.  
-- Évaluation finale avec précision, rappel, F1-score et matrice de confusion (voir le rapport PDF `Projet  Classification de Scènes Naturelles.pdf`).  
-
----
-
 ## 📂 Structure du projet  
 ```
 .
@@ -89,7 +127,7 @@ Une interface s’ouvre dans le navigateur (par défaut : [http://localhost:8501
 ├── transfer_best.keras        # Modèle entraîné sauvegardé
 ├── requirements.txt           # Dépendances
 ├── Projet Classification...pdf# Rapport de projet
-├── script_final.ipynb         # Notebook d'entraînement
+├── script_final.ipynb         # Notebook d'entraînement et analyse
 └── README.md                  # Documentation
 ```
 
