@@ -134,7 +134,7 @@ Une interface s’ouvre dans le navigateur (par défaut : [http://localhost:8501
 ---
 
 ## 🚀 Améliorations possibles  
-- Ajouter une **visualisation Grad-CAM** pour comprendre les zones d’attention du modèle.  
+- Ajouter une **visualisation Grad-CAM** sur l'application pour comprendre les zones d’attention du modèle.  
 - Permettre la **capture caméra en direct**.  
 - Ajouter l’export des prédictions en CSV.  
 - Tester d’autres architectures pré-entraînées (ResNet50, EfficientNet).  
